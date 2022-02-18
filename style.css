@@ -5,24 +5,21 @@
 }
 
 body {
-  height: 100vh;
   background: #9c5df2;
-  display: flex;
 }
 
 .memory-game {
   margin: auto;
   width: 500px;
-  height: 500px;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  gap: 10px;
   perspective: 1000px;
 }
 
 .memory-card {
   border: 2px solid black;
-  width: calc(50% - 10px);
-  height: calc(50% - 10px);
+  flex-basis: 33%;
   position: relative;
   margin: 5px;
   transform: scale(1);
@@ -41,7 +38,6 @@ body {
 .front-face,
 .back-face {
   width: 100%;
-  height: 100%;
   position: absolute;
   backface-visibility: hidden;
 }
