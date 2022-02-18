@@ -8,26 +8,21 @@ function flipCard() {
 
   if (!hasFlippedCard) {
     //first click
-
     hasFlippedCard = true;
     firstCard = this;
-  } else {
-    //second click
-    hasFlippedCard = false;
-    secondCard = this;
-
-    checkForMarch();
+    return;
   }
+  //second click
+  hasFlippedCard = false;
+  secondCard = this;
+
+  checkForMatch();
 }
 
-function checkForMarch() {
-  //do cards match?
-  if (firstCard.dataset.framework === secondCard.dataset.framework) {
-    //it's a match!
-    disableCards();
-  } else {
-    unflipCards();
-  }
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
