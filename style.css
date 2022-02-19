@@ -10,17 +10,16 @@ body {
 
 .memory-game {
   margin: auto;
-  width: 600px;
+  width: 1000px;
   display: flex;
   flex-flow: row wrap;
-  gap: 10px;
   perspective: 1000px;
 }
 
 .memory-card {
   border: 2px solid black;
-  flex-basis: 30%;
-  height: 180px;
+  flex-basis: 20%;
+  height: 200px;
   position: relative;
   margin: 5px;
   transform: scale(1);
