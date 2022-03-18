@@ -11,17 +11,17 @@ body {
 .memory-game {
   margin: auto;
   width: 1000px;
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 8rem);
+  justify-content: center;
+  align-items: center;
   perspective: 1000px;
+  gap: 0.3rem;
 }
 
 .memory-card {
-  border: 2px solid black;
-  flex-basis: 20%;
-  height: 200px;
   position: relative;
-  margin: 5px;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: 0.5s;
@@ -37,6 +37,7 @@ body {
 }
 .front-face,
 .back-face {
+  border: 2px solid black;
   width: 100%;
   position: absolute;
   backface-visibility: hidden;
