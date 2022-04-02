@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
+let maxMatches = 8;
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
@@ -32,6 +33,12 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
+  maxMatches = maxMatches - 1;
+  if (maxMatches === 0) {
+    setTimeout(() => {
+      alert("🥳You did it! 👏👏🎉 Refresh the page to play again ✨");
+    }, 1000);
+  }
   resetBoard();
 }
 
