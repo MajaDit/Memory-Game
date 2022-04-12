@@ -31,13 +31,16 @@ function checkForMatch() {
 }
 
 function disableCards() {
+  const congrats = document.querySelector("h1");
+  const game = document.querySelector(".memory-game");
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
   maxMatches = maxMatches - 1;
   if (maxMatches === 0) {
-    setTimeout(() => {
-      alert("🥳You did it! 👏👏🎉 Refresh the page to play again ✨");
-    }, 1000);
+    congrats.classList.add("active");
+    game.classList.add("active");
+
+    setTimeout(() => {}, 1000);
   }
   resetBoard();
 }

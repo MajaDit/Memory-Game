@@ -6,10 +6,25 @@
 
 body {
   background: #9c5df2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  visibility: hidden;
+}
+
+h1.active {
+  visibility: visible;
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  margin: 0 auto;
+  width: auto;
 }
 
 .memory-game {
   display: grid;
+  margin-top: -3rem;
   grid-template-columns: repeat(4, 8rem);
   grid-template-rows: repeat(4, 8rem);
   justify-content: center;
@@ -18,6 +33,9 @@ body {
   gap: 0.3rem;
 }
 
+.memory-game.active {
+  margin-top: -2rem;
+}
 .memory-card {
   position: relative;
   transform-style: preserve-3d;
@@ -47,6 +65,6 @@ body {
 
     grid-template-rows: repeat(4, 4rem) !important;
 
-    margin-top: 5rem !important;
+    margin-top: 4rem !important;
   }
 }
